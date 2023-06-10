@@ -12,7 +12,7 @@ const App = () => {
       <Navbar />
       {isAuthenticated && (
         <>
-          <AddTaskClass />
+          <AddTask/>
           <Tasks />
         </>
       )}

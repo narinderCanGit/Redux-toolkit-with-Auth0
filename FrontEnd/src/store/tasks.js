@@ -35,13 +35,21 @@ const taskSlice = createSlice({
             state.loading = false;
         },
         addTask: (state, action) => {
+            console.log(action.payload);
+
             state.tasks.push(action.payload);
         },
         removeTask: (state, action) => {
+
+            console.log(action.payload);
             const index = state.tasks.findIndex(
-                (task) => task.id === action.payload.id
+                (task) => {
+                    // console.log(task);
+                    return task.id === action.payload.id}
             );
             state.tasks.splice(index, 1);
+            console.log(index);
+            res.json(index);
         },
         completedTask: (state, action) => {
             const index = state.tasks.findIndex(
